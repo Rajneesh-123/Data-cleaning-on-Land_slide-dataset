@@ -1,0 +1,101 @@
+
+
+import statistics as st
+import pandas as pd
+from matplotlib import pyplot as plt
+
+read_file=pd.read_csv("C:\\Users\\ASUS\\Desktop\\landslide_data3_miss.csv")
+
+var=read_file.fillna(read_file.mean())
+
+stationID=var["stationid"]
+temp=var["temperature"]
+humidity=var["humidity"]
+pressure=var["pressure"]
+rain=var["rain"]
+light=var["lightavgw/o0"]
+lightmax=var["lightmax"]
+moist=var["moisture"]
+
+print(temp[0])
+print(temp.mean())
+print(temp.mode())
+
+
+SD_temp=st.stdev(temp)
+SD_hum=st.stdev(humidity)
+SD_press=st.stdev(pressure)
+SD_rain=st.stdev(rain)
+SD_light=st.stdev(light)
+SD_lightmax=st.stdev(lightmax)
+SD_moist=st.stdev(moist)
+
+print("The stdev of temp is ",SD_temp)
+print("The stdev of hum is ",SD_hum)
+print("The stdev of pres is ",SD_press)
+print("The stdev of rain is ",SD_rain)
+print("The stdev of light is ",SD_light)
+print("The stdev of lightmax is ",SD_lightmax)
+print("The stdev of moist is ",SD_moist)
+print()
+
+MEAN_temp=st.mean(temp)
+MEAN_hum=st.mean(humidity)
+MEAN_rain=st.mean(rain)
+MEAN_light=st.mean(light)
+MEAN_press=st.mean(pressure)
+MEAN_lightmax=st.mean(lightmax)
+MEAN_moist=st.mean(moist)
+
+
+print("The mean of temp is ",MEAN_temp)
+print("The mean of hum is ",MEAN_hum)
+print("The mean of press is ",MEAN_press)
+print("The mean of rain is ",MEAN_rain)
+print("The mean of light is ",MEAN_light)
+print("The mean of lightmax is ",MEAN_lightmax)
+print("The mean of moist is ",MEAN_moist)
+
+print()
+
+MEDIAN_temp=st.median(temp)
+MEDIAN_hum=st.median(humidity)
+MEDIAN_press=st.median(pressure)
+MEDIAN_rain=st.median(rain)
+MEDIAN_light=st.median(light)
+MEDIAN_lightmax=st.median(lightmax)
+MEDIAN_moist=st.median(moist)
+
+print("The median of temp is ",MEDIAN_temp)
+print("The median of hum is ",MEDIAN_hum)
+print("The median of press is ",MEDIAN_press)
+print("The mediano f rain is ",MEDIAN_rain)
+print("The median of light is ",MEDIAN_light)
+print("The median of lightmax is ",MEDIAN_lightmax)
+print("The median of moist is ",MEDIAN_moist)
+
+print()
+
+MODE_temp=st.mode(temp)
+MODE_hum=st.mode(humidity)
+MODE_press=st.mode(pressure)
+MODE_rain=st.mode(rain)
+MODE_light=st.mode(light)
+MODE_lightmax=st.mode(lightmax)
+MODE_moist=st.mode(moist)
+
+print("The mode of temp is ",MODE_temp)
+print("The mode of hum is ",MODE_hum)
+print("The mode of press is ",MODE_press)
+print("The mode of rain is ",MODE_rain)
+print("The mode of light is ",MODE_light)
+print("The mode of lightmax is ",MODE_lightmax)
+print("The mode of moist is ",MODE_moist)
+print()
+
+
+
+
+
+
+    

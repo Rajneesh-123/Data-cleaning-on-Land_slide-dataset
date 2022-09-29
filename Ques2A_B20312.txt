@@ -1,0 +1,31 @@
+import pandas as pd
+
+from matplotlib import pyplot as plt
+
+read_file=pd.read_csv("C:\\Users\\ASUS\\Desktop\\landslide_data3_miss.csv")
+
+stationID=read_file["stationid"].fillna(-10)
+temp=read_file["temperature"].fillna(-10)
+humidity=read_file["humidity"].fillna(-10)
+pressure=read_file["pressure"].fillna(-10)
+rain=read_file["rain"].fillna(-10)
+light=read_file["lightavgw/o0"].fillna(-10)
+lightmax=read_file["lightmax"].fillna(-10)
+moist=read_file["moisture"].fillna(-10)
+
+
+count_station=0
+
+for i in range (len(stationID)):
+    if stationID[i]==-10:
+        count_station=count_station+1
+    
+        
+
+print("No of empty elements in is",count_station)
+
+
+
+
+
+                      

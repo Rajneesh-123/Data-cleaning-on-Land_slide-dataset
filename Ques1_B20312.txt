@@ -1,0 +1,59 @@
+import pandas as pd
+
+from matplotlib import pyplot as plt
+
+read_file=pd.read_csv("C:\\Users\\ASUS\\Desktop\\landslide_data3_miss.csv")
+
+stationID=read_file["stationid"]
+rain=read_file["rain"].fillna(-10)
+light=read_file["lightavgw/o0"].fillna(-10)
+lightmax=read_file["lightmax"].fillna(-10)
+moist=read_file["moisture"].fillna(-10)
+temp=read_file["temperature"].fillna(-10)
+humidity=read_file["humidity"].fillna(-10)
+pressure=read_file["pressure"].fillna(-10)
+
+
+count_temp=0
+count_press=0
+count_hum=0
+count_rain=0
+count_light=0
+count_lightmax=0
+count_moist=0
+for i in range (len(temp)):
+    if temp[i]==-10:
+        count_temp=count_temp+1
+    if humidity[i]==-10:
+        count_hum=count_hum+1
+    if pressure[i]==-10:
+        count_press=count_press+1
+    if rain[i]==-10:
+        count_rain=count_rain+1
+    if light[i]==-10:
+        count_light=count_light+1
+    if lightmax[i]==-10:
+        count_lightmax=count_lightmax+1
+    if moist[i]==-10:
+        count_moist=count_moist+1
+        
+
+print("No of empty elements in temperature is",count_temp)
+print("No of empty elements in humidity is",count_hum)
+print("No of empty elements in rain is",count_rain)
+print("No of empty elements in light is",count_light)
+print("No of empty elements in lightmax is",count_lightmax)
+print("No of empty elements in moist is",count_moist)
+
+
+plt.bar("Temp",count_temp)
+plt.bar("Press",count_press)
+plt.bar("Hum",count_hum)
+plt.bar("Rain",count_rain)
+plt.bar("Lightmax",count_lightmax)
+plt.bar("moist",count_moist)
+plt.ylabel("Frequency")
+plt.title("No of missing elements")
+plt.show()
+
+                      

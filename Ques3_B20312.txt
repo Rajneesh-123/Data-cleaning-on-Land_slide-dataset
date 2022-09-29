@@ -1,0 +1,112 @@
+
+import pandas as pd
+
+from matplotlib import pyplot as plt
+
+read_file=pd.read_csv("C:\\Users\\ASUS\\Desktop\\landslide_data3_miss.csv")
+
+stationID=read_file["stationid"]
+temp=read_file["temperature"].fillna(-1)
+humidity=read_file["humidity"].fillna(-1)
+pressure=read_file["pressure"].fillna(-1)
+rain=read_file["rain"].fillna(-1)
+light=read_file["lightavgw/o0"].fillna(-1)
+lightmax=read_file["lightmax"].fillna(-1)
+moist=read_file["moisture"].fillna(-1)
+
+Deleted_rows=0
+
+stationID_new=[]
+temp_new=[]
+humidity_new=[]
+pressure_new=[]
+rain_new=[]
+light_new=[]
+lightmax_new=[]
+moist_new=[]
+
+for i in range (len(temp)):
+    count_station=0
+    count_temp=0
+    count_press=0
+    count_hum=0
+    count_rain=0
+    count_light=0
+    count_lightmax=0
+    count_moist=0
+    if stationID[i]==-1:
+        count_station[i]=count_station+1
+    if temp[i]==-1:
+        count_temp=count_temp+1
+    if humidity[i]==-1:
+        count_hum=count_hum+1
+    if pressure[i]==-1:
+        count_press=count_press+1
+    if rain[i]==-1:
+        count_rain=count_rain+1
+    if light[i]==-1:
+        count_light=count_light+1
+    if lightmax[i]==-1:
+        count_lightmax=count_lightmax+1
+    if moist[i]==-1:
+        count_moist=count_moist+1
+    Sum=0
+    
+    
+    if Sum<=2:
+        stationID_new.append(stationID[i])
+        temp_new.append(temp[i])
+        humidity_new.append(humidity[i])
+        pressure_new.append(pressure[i])
+        humidity_new.append(humidity[i])
+        rain_new.append(rain[i])
+        light_new.append(light[i])
+        lightmax_new.append(lightmax[i])
+        moist_new.append(moist[i])
+        
+        
+        
+count_station1=0        
+count_temp1=0
+count_press1=0
+count_hum1=0
+count_rain1=0
+count_light1=0
+count_lightmax1=0
+count_moist1=0
+for i in range (len(temp_new)):
+    if stationID_new==-1:
+        count_station1=count_station1+1  
+    if temp_new[i]==-1:
+        count_temp1=count_temp1+1
+    if humidity_new[i]==-1:
+        count_hum1=count_hum1+1
+    if pressure_new[i]==-1:
+        count_press1=count_press1+1
+    if rain_new[i]==-1:
+        count_rain1=count_rain1+1
+    if light_new[i]==-1:
+        count_light1=count_light1+1
+    if lightmax_new[i]==-1:
+        count_lightmax1=count_lightmax1+1
+    if moist_new[i]==-1:
+        count_moist1=count_moist1+1
+
+print("No of elemnts left after deletion of rows having more thab 1/3rg missing value")
+print("The no of empty elements in station ID is ",count_station1)
+print("No of empty elements in temperature is",count_temp1)
+print("No of empty elements in humidity is",count_hum1)
+print("No of empty elements in rain is",count_rain1)
+print("No of empty elements in light is",count_light1)
+print("No of empty elements in lightmax is",count_lightmax1)
+print("No of empty elements in moist is",count_moist1)        
+        
+        
+
+    
+        
+
+
+
+
+                      
